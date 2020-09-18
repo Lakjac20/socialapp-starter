@@ -2,8 +2,7 @@ import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import LoginForm from "../components/loginForm/LoginForm";
 import RegistrationForm from "../components/registrationForm/RegistrationForm";
-import MessagesForm from "../components/messagesForm/MessagesForm";
-import Menu from "../components/menu/Menu";
+// import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import {
   MDBNavbar,
@@ -21,25 +20,30 @@ import {
   MDBContainer,
   MDBCard,
   MDBCardBody,
-  MDBInput,
   MDBFormInline,
-  MDBAnimation
+  MDBAnimation,
+  MDBTabPane, MDBTabContent,  MDBLink
 } from "mdbreact";
 import "./Home.css";
 class Home extends React.Component {
   state = {
-    collapseID: ""
+    activeItemPills: '1'
   };
-  toggleCollapse = collapseID => () =>
-    this.setState(prevState => ({
-      collapseID: prevState.collapseID !== collapseID ? collapseID : ""
-    }));
+  togglePills = tab => () => {
+    const { activePills } = this.state;
+    if (activePills !== tab) {
+      this.setState({
+        activeItemPills: tab
+      });
+    }
+  };
   render() {
+    const { activeItemPills } = this.state;
     const overlay = (
       <div
         id="sidenav-overlay"
         style={{ backgroundColor: "transparent" }}
-        onClick={this.toggleCollapse("navbarCollapse")}
+        onClick={this.togglePills("navbarCollapse")}
       />
     );
     return (
@@ -48,15 +52,15 @@ class Home extends React.Component {
           <div>
             <MDBNavbar dark expand="md" fixed="top">
               <MDBContainer>
-                <MDBNavbarBrand>
+               <MDBNavbarBrand>
                   <strong className="white-text">The Power Of Fifth</strong>
                 </MDBNavbarBrand>
                 <MDBNavbarToggler
-                  onClick={this.toggleCollapse("navbarCollapse")}
-                />
+               onClick={this.togglePills("navbarCollapse")}
+               />
                 <MDBCollapse
                   id="navbarCollapse"
-                  isOpen={this.state.collapseID}
+                  isOpen={this.state.activeItemPills}
                   navbar
                 >
                   <MDBNavbarNav right>
@@ -76,7 +80,7 @@ class Home extends React.Component {
                 </MDBCollapse>
               </MDBContainer>
             </MDBNavbar>
-            {this.state.collapseID && overlay}
+            {this.state.tab && overlay}
           </div>
         </Router>
         <MDBView>
@@ -93,14 +97,32 @@ class Home extends React.Component {
                   </h1>
                   <hr className="hr-light" />
                   <h6 className="mb-4">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Rem repellendus quasi fuga nesciunt dolorum nulla magnam
-                    veniam sapiente, fugiat! Commodi sequi non animi ea dolor
-                    molestiae, quisquam iste, maiores. Nulla.
+                    The 5th Power is a network of people who are helping others to find relaxation and strengthen their way of living 
                   </h6>
+                  <MDBLink to='#' active={activeItemPills === '1'} onClick={this.togglePills('2')} link>
                   <MDBBtn color="indigo">
                     Sign Up
                    </MDBBtn>
+                   </MDBLink>
+                   <MDBContainer>
+          <MDBRow> 
+            <MDBCol md='12'>
+                <MDBTabContent activeItem={activeItemPills}>
+                  <MDBTabPane tabId='2'>
+                    <p>
+                    <MDBCard id="classic-card">
+                      <MDBCardBody className="white-text">
+                        <RegistrationForm/>
+                        <div className="text-center mt-4 black-text">
+                        </div>
+                      </MDBCardBody>
+                    </MDBCard>
+                    </p>
+                  </MDBTabPane>
+                </MDBTabContent>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
                 </MDBAnimation>
                 <MDBCol md="6" xl="5" className="mb-4">
                   <MDBAnimation type="fadeInRight" delay=".3s">
@@ -110,21 +132,8 @@ class Home extends React.Component {
                           <MDBIcon icon="user" /> Login:
                         </h3>
                         <hr className="hr-light" />
-                        <MDBInput
-                          className="white-text"
-                          iconClass="white-text"
-                          label="Username"
-                          icon="user"
-                        />
-                        <MDBInput
-                          className="white-text"
-                          iconClass="white-text"
-                          label="Password"
-                          icon="lock"
-                          type="password"
-                        />
+                        <LoginForm/>
                         <div className="text-center mt-4 black-text">
-                          <MDBBtn color="indigo">Sign In</MDBBtn>
                           <hr className="hr-light" />
                           <div className="text-center d-flex justify-content-center white-label">
                             <a href="#!" className="p-2 m-2">

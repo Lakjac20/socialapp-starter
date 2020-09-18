@@ -1,6 +1,7 @@
 import React from "react";
 import Spinner from "react-spinkit";
 import "./MessagesForm.css";
+
 class MessagesForm extends React.Component {
   constructor(props) {
     super(props);
@@ -8,6 +9,7 @@ class MessagesForm extends React.Component {
       message: "",
     };
   }
+
   handleSubmit = (e) => {
     e.preventDefault();
     this.client.postMessage(this.state.message).then((result) => {
@@ -20,14 +22,14 @@ class MessagesForm extends React.Component {
     });
   };
   handleChange = (e) => {
-    let message = this.state.message;
-    message[e.target.name] = e.target.value;
+    let newmessage = e.target.value;
     this.setState({
       message: {
-        text: "message",
+        text: newmessage,
       },
     });
   };
+
   render() {
     const { loading, error } = this.props;
     return (
@@ -52,4 +54,5 @@ class MessagesForm extends React.Component {
     );
   }
 }
+
 export default MessagesForm;
