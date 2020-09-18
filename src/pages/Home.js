@@ -101,7 +101,7 @@ class Home extends React.Component {
                   </h6>
                   <MDBLink to='#' active={activeItemPills === '1'} onClick={this.togglePills('2')} link>
                   <MDBBtn color="indigo">
-                    Sign Up
+                    Click to get Sign Up Menu
                    </MDBBtn>
                    </MDBLink>
                    <MDBContainer>
