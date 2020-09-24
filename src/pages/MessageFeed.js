@@ -1,8 +1,8 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
-import MessageList from "../components/messageList/MessageList";
 import DataService from "../service/DataService";
+import Message from "../components/message/Message";
 
 class MessageFeed extends React.Component {
   constructor(props) {
@@ -20,6 +20,7 @@ class MessageFeed extends React.Component {
     return this.client.getMessages(10).then((result) =>
       this.setState({
         messages: result.data.messages,
+
         // messageSent: false,
       })
     );
@@ -44,19 +45,6 @@ class MessageFeed extends React.Component {
     event.target.reset();
   };
 
-  handleLike = (event) => {
-    let userData = JSON.parse(localStorage.getItem("login")).result;
-    let likeTarget = { messageId: Number(event.target.id) };
-    let messagecheck = this.client.getSpecificMessage(Number(event.target.id));
-    console.log(messagecheck);
-    if (messagecheck.message === userData.username) {
-      return console.log("You Already Liked This");
-    }
-    return this.client.likeMessage(likeTarget).then((result) => {
-      this.getMessages();
-    });
-  };
-
   componentDidMount() {
     this.getMessages();
   }
@@ -73,13 +61,17 @@ class MessageFeed extends React.Component {
     return (
       <div className="MessageBlock">
         <Menu isAuthenticated={this.props.isAuthenticated} />
+
         <h1>Messages</h1>
         <div className="message-field">
           <div className="messages">
-            <MessageList
+            {this.state.messages.map((messageObject) => (
+              <Message key={messageObject.id} {...messageObject} />
+            ))}
+            {/* <MessageList
               handleLike={this.handleLike}
               messageArray={this.state.messages}
-            />
+            /> */}
           </div>
           <div className="NewMessage">
             <form
