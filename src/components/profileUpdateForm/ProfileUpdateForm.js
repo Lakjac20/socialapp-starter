@@ -2,7 +2,7 @@ import React from "react";
 import Menu from "../menu/Menu";
 import { userIsAuthenticated } from "../../redux/HOCs";
 import "./ProfileUpdateForm.css";
-import DataService from "../../services/DataService/DataService";
+import DataService from "../../service/DataService";
 
 class ProfileUpdateForm extends React.Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class ProfileUpdateForm extends React.Component {
   };
 
   render() {
-    const { loading, error } = this.props;
+    const { loading} = this.props;
     return (
       <div className="profileupdatepage">
         <Menu isAuthenticated={this.props.isAuthenticated} />

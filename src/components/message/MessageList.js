@@ -4,7 +4,7 @@ function MessageList(props) {
   if (props.messageArray.length > 0) {
     return props.messageArray.map((message) => (
       <div key={message.id} className="message">
-        <h5>{message.username}</h5>
+        <h6>{message.username}</h6>
         <p>
           {message.text} Likes:{message.likes.length}
         </p>
