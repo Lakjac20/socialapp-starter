@@ -2,8 +2,10 @@ import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import LoginForm from "../components/loginForm/LoginForm";
 import RegistrationForm from "../components/registrationForm/RegistrationForm";
+import Button from 'react-bootstrap/Button';
 // import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
+
 import {
   MDBNavbar,
   MDBNavbarBrand,
