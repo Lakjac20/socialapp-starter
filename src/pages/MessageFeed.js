@@ -1,7 +1,7 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
-import MessageList from "../components/message/MessageList";
+import MessageList from "../components/messageList/MessageList";
 import DataService from "../service/DataService";
 
 class MessageFeed extends React.Component {

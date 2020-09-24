@@ -24,7 +24,7 @@ class ProfileUpdateForm extends React.Component {
   };
 
   render() {
-    const { loading} = this.props;
+    const { loading, error } = this.props;
     return (
       <div className="profileupdatepage">
         <Menu isAuthenticated={this.props.isAuthenticated} />
