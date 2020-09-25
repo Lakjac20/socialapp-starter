@@ -1,8 +1,30 @@
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import LoginForm from "../components/loginForm/LoginForm";
-import Menu from "../components/menu/Menu";
+import RegistrationForm from "../components/registrationForm/RegistrationForm";
+// import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
-
+import {
+  MDBNavbar,
+  MDBNavbarBrand,
+  MDBNavbarNav,
+  MDBNavItem,
+  MDBNavbarToggler,
+  MDBCollapse,
+  MDBMask,
+  MDBRow,
+  MDBCol,
+  MDBIcon,
+  MDBBtn,
+  MDBView,
+  MDBContainer,
+  MDBCard,
+  MDBCardBody,
+  MDBFormInline,
+  MDBAnimation,
+  MDBTabPane, MDBTabContent, MDBLink
+} from "mdbreact";
+import './Home.css'
 class Home extends React.Component {
   render() {
     return (
