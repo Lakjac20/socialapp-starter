@@ -2,7 +2,7 @@ import React from "react";
 import Menu from "../menu/Menu";
 import { userIsAuthenticated } from "../../redux/HOCs";
 import "./ProfileUpdateForm.css";
-import DataService from "../../service/DataService";
+import DataService from "../../DataService";
 
 class ProfileUpdateForm extends React.Component {
   constructor(props) {

@@ -2,7 +2,7 @@ import React from "react";
 import Menu from "../components/menu/Menu";
 import { Link } from "react-router-dom";
 import { userIsAuthenticated } from "../redux/HOCs";
-import DataService from "../service/DataService";
+import DataService from "../DataService";
 
 class Profile extends React.Component {
   constructor(props) {

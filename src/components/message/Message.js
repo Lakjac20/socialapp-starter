@@ -1,5 +1,5 @@
 import React from "react";
-import DataService from "../../service/DataService";
+import DataService from "../../DataService";
 
 class Message extends React.Component {
   constructor(props) {
