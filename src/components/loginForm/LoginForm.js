@@ -2,22 +2,22 @@ import React from "react";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./LoginForm.css";
-import { MDBInput, MDBBtn } from "mdbreact";
+
 class LoginForm extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       username: "",
-      password: "",
+      password: ""
     };
   }
 
-  handleLogin = (e) => {
+  handleLogin = e => {
     e.preventDefault();
     this.props.login(this.state);
   };
 
-  handleChange = (e) => {
+  handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -26,29 +26,24 @@ class LoginForm extends React.Component {
     return (
       <div className="LoginForm">
         <form id="login-form" onSubmit={this.handleLogin}>
-          <MDBInput
-            className="white-text"
-            iconClass="white-text"
-            label="Username"
-            icon="user"
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
             name="username"
             autoFocus
             required
             onChange={this.handleChange}
           />
-          <MDBInput
-            className="white-text"
-            iconClass="white-text"
-            label="Password"
-            icon="lock"
+          <label htmlFor="password">Password</label>
+          <input
             type="password"
             name="password"
             required
             onChange={this.handleChange}
           />
-          <MDBBtn type="submit" color="indigo" disabled={loading}>
-            Sign In
-          </MDBBtn>
+          <button type="submit" disabled={loading}>
+            Login
+          </button>
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
