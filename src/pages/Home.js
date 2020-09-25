@@ -26,7 +26,26 @@ import {
 } from "mdbreact";
 import './Home.css'
 class Home extends React.Component {
+  state = {
+    activeItemPills: '1'
+  };
+  togglePills = tab => () => {
+    const { activePills } = this.state;
+    if (activePills !== tab) {
+      this.setState({
+        activeItemPills: tab
+      });
+    }
+  };
   render() {
+    const { activeItemPills } = this.state;
+    const overlay = (
+      <div
+        id="sidenav-overlay"
+        style={{ backgroundColor: "transparent" }}
+        onClick={this.togglePills("navbarCollapse")}
+      />
+    );
     return (
       <div id="classicformpage">
         <Router>
