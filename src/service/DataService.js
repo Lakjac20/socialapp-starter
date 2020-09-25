@@ -13,9 +13,11 @@ class DataService {
   getMessages(limit) {
     return this.client.get(this.url + "/messages?limit=" + limit);
   }
+
   getSpecificMessage(messageId) {
     return this.client.get(this.url + "/messages/" + messageId);
   }
+
   createMessage(text) {
     let loginData = JSON.parse(localStorage.getItem("login"));
     return this.client.post(this.url + "/messages", text, {
@@ -42,6 +44,12 @@ class DataService {
   unlikeMessage(likeId) {
     let loginData = JSON.parse(localStorage.getItem("login"));
     return this.client.delete(this.url + "/likes/" + likeId, {
+      headers: { Authorization: `Bearer ${loginData.result.token}` },
+    });
+  }
+  deleteMessage(messageId) {
+    let loginData = JSON.parse(localStorage.getItem("login"));
+    return this.client.delete(this.url + "/messages/" + messageId, {
       headers: { Authorization: `Bearer ${loginData.result.token}` },
     });
   }
