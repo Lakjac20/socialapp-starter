@@ -139,21 +139,21 @@ class Home extends React.Component {
                             <a href="#!" className="p-2 m-2">
                               <MDBIcon
                                 fab
-                                icon="twitter"
+                                icon=""
                                 className="white-text"
                               />
                             </a>
                             <a href="#!" className="p-2 m-2">
                               <MDBIcon
                                 fab
-                                icon="linkedin"
+                                icon=""
                                 className="white-text"
                               />
                             </a>
                             <a href="#!" className="p-2 m-2">
                               <MDBIcon
                                 fab
-                                icon="instagram"
+                                icon=""
                                 className="white-text"
                               />
                             </a>
