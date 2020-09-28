@@ -3,7 +3,7 @@ import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
 import DataService from "../service/DataService";
 import Message from "../components/message/Message";
-
+import "./MessageFeed.css";
 class MessageFeed extends React.Component {
   constructor(props) {
     super(props);
@@ -62,7 +62,7 @@ class MessageFeed extends React.Component {
       <div className="MessageBlock">
         <Menu isAuthenticated={this.props.isAuthenticated} />
 
-        <h1>Messages</h1>
+        <h3>Messages From Everyone</h3>
         <div className="message-field">
           <div className="messages">
             {this.state.messages.map((messageObject) => (
@@ -80,7 +80,7 @@ class MessageFeed extends React.Component {
               onSubmit={this.handleSubmit}
             >
               <input name="text" type="text" />
-              <button>Create Message</button>
+              <button>Penny For Your Thoughts</button>
             </form>
           </div>
         </div>
