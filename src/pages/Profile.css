@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 
+
 * {
     margin: 0;
     padding: 0;
@@ -10,8 +11,9 @@
 }
 
 body {
-    background-color: #f3f5f9
+    background: #00bcd4;
 }
+
 
 .wrapper {
     display: flex;
@@ -21,7 +23,7 @@ body {
 .wrapper .sidebar {
     width: 250px;
     height: 100%;
-    background: slateblue;
+    background: #87CEFA;
     padding: 30px 0px;
     position: fixed
 }
@@ -41,7 +43,7 @@ body {
 }
 
 .wrapper .sidebar ul li a {
-    color: #bdb8d7;
+    color: black;
     display: block
 }
 
@@ -50,7 +52,7 @@ body {
 }
 
 .wrapper .sidebar ul li:hover {
-    background-color: #7d777717
+    background-color: #7d777717;
 }
 
 .wrapper .sidebar ul li:hover a {
@@ -69,7 +71,7 @@ body {
     display: block;
     width: 40px;
     height: 40px;
-    background: transparent;
+    background-color: #78909c;
     line-height: 45px;
     text-align: center;
     margin: 0 5px;
@@ -85,14 +87,14 @@ body {
 
 .wrapper .main_content .header {
     padding: 20px;
-    background: slateblue;
+    background: #87CEFA;
     color: #fff;
     border-bottom: 1px solid #e0e4e8
 }
 
 .wrapper .main_content .info {
     margin: 20px;
-    color: #717171;
+    color: black;
     line-height: 25px
 }
 
@@ -102,6 +104,9 @@ body {
 img{
     width:250px;
 }
+
+
+
 
 
 body {
@@ -166,3 +171,107 @@ display: block;
 line-height: 1.428571429;
 color: #999;
 }
+
+
+
+.container-widget .panel {
+    margin-bottom: 15px;
+    border-radius: 0px;
+    border: 1px #e6e9ee solid;
+}
+
+.panel-info {
+    background: #3f51b5 url(http://themesground.com/modern/demo1/HTML/img/intro-bg.png) repeat top left;
+    color: #fff;
+}
+
+.panel-success {
+    background: #1ab394 url(http://themesground.com/modern/demo1/HTML/img/intro-bg.png) repeat top left;
+    color: #fff;
+}
+
+.panel-widget {
+    overflow: hidden;
+    border: none;
+}
+
+.panel .panel-title {
+    color: #58666e;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0px;
+}
+.panel-title {
+    font-family: 'Montserrat', sans-serif;
+    color: #58666e;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 16px 20px;
+    margin: -20px;
+    background: #fff;
+    margin-bottom: 5px;
+    border-bottom: none;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    letter-spacing: 1px;
+}
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: inherit;
+}
+.basic-list {
+    margin-bottom: 0;
+    padding: 0;
+}
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* Basic List */
+.basic-list {
+  margin-bottom: 0;
+  padding: 0;
+}
+.basic-list li {
+  display: block;
+  position: relative;
+  padding: 12px 0;
+}
+.basic-list li:last-child {
+  border-bottom: none;
+}
+.basic-list .right {
+  position: absolute;
+  right: 0;
+  display: inline-block;
+  padding: 3px 6px;
+  font-weight: 600;
+}
+
+/* Image List */
+.image-list li {
+  padding-left: 50px;
+}
+.image-list .img {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 0;
+  border-radius: 0px;
+}
+.image-list .desc {
+  font-size: 12px;
+  opacity: 0.8;
+  display: block;
+}
+
+
+
+
+
+
+
