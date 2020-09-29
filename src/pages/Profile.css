@@ -9,6 +9,9 @@
     text-decoration: none;
     font-family: 'Josefin Sans', sans-serif
 }
+.profile{
+    background: #00bcd4;
+}
 
 body {
     background: #00bcd4;
@@ -104,7 +107,9 @@ body {
 img{
     width:250px;
 }
-
+.profilespace {
+    background: #00bcd4;
+}
 
 
 
