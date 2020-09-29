@@ -4,6 +4,7 @@ import { userIsAuthenticated } from "../redux/HOCs";
 import DataService from "../service/DataService";
 import Message from "../components/message/Message";
 import "./MessageFeed.css";
+import MDBBtn from "mdbreact";
 class MessageFeed extends React.Component {
   constructor(props) {
     super(props);
@@ -80,7 +81,7 @@ class MessageFeed extends React.Component {
               onSubmit={this.handleSubmit}
             >
               <input name="text" type="text" />
-              <button>Penny For Your Thoughts</button>
+              <MDBBtn type="submit" color="indigo" disabled={loading}>Penny For Your Thoughts</MDBBtn>
             </form>
           </div>
         </div>
