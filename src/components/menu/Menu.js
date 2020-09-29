@@ -31,11 +31,11 @@ class Menu extends React.Component {
         <h1>5th Power</h1>
         {this.props.isAuthenticated && (
           <div id="menu-links">
-            <Link to={profileLink}>Profile</Link>
-            <Link to="/messagefeed">Message Feed</Link>
-            <Link to="/" onClick={this.handleLogout}>
+            
+            <button class="btn aqua-gradient"><Link to="/" onClick={this.handleLogout}>
               Logout
             </Link>
+            </button>
           </div>
         )}
       </div>

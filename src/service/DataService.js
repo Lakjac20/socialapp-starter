@@ -60,6 +60,11 @@ class DataService {
   getUserPicture(username) {
     return this.client.get(`${this.url}/users/${username}/picture`);
   }
+
+  getUsersList(limit) {
+    return this.client.get(this.url + `/users?limit=${limit}`)
+  }
+
   changeProfilePic(picture) {
     let loginData = JSON.parse(localStorage.getItem("login"));
     console.log(picture);
