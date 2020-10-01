@@ -10,7 +10,6 @@ class MessageFeed extends React.Component {
     this.state = {
       message: { text: "" },
       messages: [],
-      // messageSent: false,
     };
 
     this.client = new DataService();
@@ -20,8 +19,6 @@ class MessageFeed extends React.Component {
     return this.client.getMessages(10).then((result) =>
       this.setState({
         messages: result.data.messages,
-
-        // messageSent: false,
       })
     );
   }
@@ -30,7 +27,6 @@ class MessageFeed extends React.Component {
     let newmessage = e.target.value;
     this.setState({ message: { text: newmessage } });
   };
-  // reused from login form
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -40,7 +36,6 @@ class MessageFeed extends React.Component {
 
     this.setState({
       message: { text: "" },
-      // messageSent: true,
     });
     event.target.reset();
   };
