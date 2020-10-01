@@ -1,6 +1,6 @@
-export * from "./auth";
-export const domain = "https://socialapp-api.herokuapp.com";
 
+export const domain = "https://socialapp-api.herokuapp.com";
+export * from "./auth";
 export const jsonHeaders = {
     "Content-Type": "application/json",
     Accept: "application/json"
