@@ -3,7 +3,7 @@ import Menu from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
 import DataService from "../service/DataService";
 import Message from "../components/message/Message";
-import "./MessageFeed.css";
+import { MDBBtn } from "mdbreact";
 class MessageFeed extends React.Component {
   constructor(props) {
     super(props);
