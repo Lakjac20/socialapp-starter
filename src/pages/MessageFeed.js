@@ -50,14 +50,6 @@ class MessageFeed extends React.Component {
   }
 
   render() {
-    // if (this.state.messageSent === true) {
-    //   this.getMessages();
-    //   return (
-    //     <div>
-    //       <h1>Message Sent!</h1>
-    //     </div>
-    //   );
-    // }
     return (
       <div className="MessageBlock">
         <Menu isAuthenticated={this.props.isAuthenticated} />
