@@ -63,7 +63,7 @@ class MessageFeed extends React.Component {
               onSubmit={this.handleSubmit}
             >
               <input name="text" type="text" />
-              <button>Penny For Your Thoughts</button>
+              <MDBBtn type="submit" disabled={loading}>Penny For Your Thoughts</MDBBtn>
             </form>
           </div>
         </div>
