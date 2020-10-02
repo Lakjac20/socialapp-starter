@@ -6,5 +6,5 @@ class MessageFeed extends React.Component {
         message: "",
       };
     }
-
+  }
 export default userIsAuthenticated(MessageFeed);
