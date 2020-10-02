@@ -3,7 +3,7 @@ import Menu from "../menu/Menu";
 import { Link } from "react-router-dom";
 import { userIsAuthenticated } from "../../redux/HOCs";
 import "./ProfileUpdateForm.css";
-import DataService from "../../service/DataService";
+import DataService from "../../dataService/DataService";
 
 
 import { MDBBtn, MDBIcon } from "mdbreact";

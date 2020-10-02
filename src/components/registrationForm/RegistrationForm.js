@@ -1,7 +1,7 @@
 import React from "react";
 import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
-import DataService from "../../service/DataService";
+import DataService from "../../dataService/DataService";
 import  { MDBInput, MDBBtn } from  "mdbreact";
 class RegistrationForm extends React.Component {
   constructor(props) {

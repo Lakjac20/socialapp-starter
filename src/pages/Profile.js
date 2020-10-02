@@ -1,13 +1,11 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { Link } from "react-router-dom";
-import DataService from "../service/DataService";
+import DataService from "../dataService/DataService";
 import { userIsAuthenticated } from "../redux/HOCs";
 import "./Profile.css";
 import { MDBBtn,MDBIcon } from "mdbreact";
 import logo from "../assets/images/logo3.jpg";
-
-
 
 class Profile extends React.Component {
   constructor(props) {
