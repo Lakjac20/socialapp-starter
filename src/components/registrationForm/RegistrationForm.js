@@ -1,8 +1,9 @@
 import React from "react";
 import Spinner from "react-spinkit";
 import "./RegistrationForm.css";
-import DataService from "../../dataService/DataService";
 import  { MDBInput, MDBBtn } from  "mdbreact";
+import BackendService from "../components/services/BackendService";
+
 class RegistrationForm extends React.Component {
   constructor(props) {
     super(props)
@@ -11,7 +12,7 @@ class RegistrationForm extends React.Component {
       "password": "",
       "displayName": ""
     };
-    this.client = new DataService();
+    this.client = new BackendService();
   }
   handleRegistration = e => {
     e.preventDefault();
