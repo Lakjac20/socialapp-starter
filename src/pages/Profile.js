@@ -44,7 +44,7 @@ class Profile extends React.Component {
     <img src={logo} id="title" alt="logo"></img>
         <ul>
             <li ><Link to="/Profile"><i class="fa fa-home"></i>Profile</Link></li>
-            <li><a href="#"><i class="fa fa-user"></i>Users</a></li>
+            <li><Link to="/ProfileUpdate"><i class="fa fa-user"></i>Users</Link></li>
            
             <li><Link to="/messagefeed"><MDBIcon class="fa fa-comment" far icon="comment" > </MDBIcon>MessageFeed</Link></li>
             
@@ -55,7 +55,7 @@ class Profile extends React.Component {
       
     </div>
     <div class="main_content">
-        <div class="header">The Power Of five welcomes you! 
+        <div class="header">
         <Menu isAuthenticated={this.props.isAuthenticated} />
         
         </div>
@@ -69,7 +69,8 @@ class Profile extends React.Component {
         <div class="profile text-center mt-2 text-white">
             <h3 class="mt-2"><h3>Profile Name: {this.state.user.displayName} </h3></h3> <span class="d-block">
             <p>Update Name:{this.state.user.about}</p></span> 
-            <div class="mt-4">  <Link to="/ProfileUpdate"><MDBBtn>Update Profile</MDBBtn></Link> <Link to="/profilePictureUpdate"><MDBBtn>Upload Picture</MDBBtn></Link> </div>
+            <div class="mt-4">  <Link to="/ProfileUpdate"><MDBBtn class="btn aqua-gradient">Update Profile</MDBBtn></Link> <Link to="/profilePictureUpdate">
+              <MDBBtn class="btn aqua-gradient">Upload Picture</MDBBtn></Link> </div>
             <div class="icons">
             <li><a href=""><i class="fa fa-facebook"></i></a></li>
                 <li><a href=""><i class="fa fa-twitter"></i></a></li>

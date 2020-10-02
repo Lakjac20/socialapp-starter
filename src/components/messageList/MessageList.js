@@ -10,10 +10,10 @@ function MessageList(props) {
         <p>
           {message.text} Likes:{message.likes.length}
         </p>
-        <button id={message.id} onClick={props.handleLike}>
+        <button  id={message.id} onClick={props.handleLike}>
           &#10084;
         </button>
-        <button>Unlike</button>
+        <button >Unlike</button>
       </div>
     ));
   }

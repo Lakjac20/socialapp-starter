@@ -80,14 +80,25 @@ class MessageFeed extends React.Component {
       
     </div>
     <div class="main_content">
-        <div class="header">The Power Of five welcomes you! 
+        <div class="header"> 
         <Menu isAuthenticated={this.props.isAuthenticated} />
         
         </div>
         
         <div className="profilespace">
-        <h1>Profile</h1>
-        <div className="MessageBlock">
+        <h1>Messages</h1>
+        <div class="container py-5">
+  
+  
+
+  
+    <div class="col-lg-8 mx-auto">
+
+      <div class="card mb-4">
+        <div class="card-body p-5">
+          
+          <div class="custom-scrollbar-css p-2">
+          <div className="MessageBlock">
 
 <h3>Messages From Everyone</h3>
 <div className="message-field">
@@ -107,10 +118,26 @@ class MessageFeed extends React.Component {
       onSubmit={this.handleSubmit}
     >
       <input name="text" type="text" />
-      <button>Penny For Your Thoughts</button>
+      <button class="btn aqua-gradient">Penny For Your Thoughts</button>
     </form>
   </div>
+  
 </div>
+</div>
+          </div>
+        </div>
+      </div>
+
+     
+
+     
+
+     
+      
+
+      
+    </div>
+  
 </div>
           
        
