@@ -3,7 +3,7 @@ import Menu from "../components/menu/Menu";
 import { Link } from "react-router-dom";
 import { userIsAuthenticated } from "../redux/HOCs";
 import DataService from "../DataService";
-
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 class Profile extends React.Component {
   constructor(props) {
     super(props);
