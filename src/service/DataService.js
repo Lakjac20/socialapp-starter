@@ -1,4 +1,5 @@
-import axios from "axios"
+import axios from "axios";
+
 const BASE_URL = "https://socialapp-api.heroku.com";
 
 class DataService{
@@ -15,9 +16,7 @@ class DataService{
   RegisterUser(userData) {
     return this.client.post(this.url + "/users", userData);
   }
-  getMessages(limit) {
-    return this.client.get(this.url + "/messages?limit=" + limit);
-  }
+ 
 
   getSpecificMessage(messageId) {
     return this.client.get(this.url + "/messages/" + messageId);
@@ -84,5 +83,4 @@ class DataService{
     );
   }
 }
-
-export default new DataService()
+export default DataService;

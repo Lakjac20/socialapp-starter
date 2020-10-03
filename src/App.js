@@ -11,16 +11,6 @@ class App extends React.Component {
   render() {
     return (
       <Switch>
-        <Route 
-        exact 
-        path="/profileUpdate"
-         component={ProfileUpdateForm}
-          />
-        <Route
-         exact 
-         path="/profile"
-          component={Profile} 
-          />
         <Route
           exact
           path="/"
@@ -36,7 +26,18 @@ class App extends React.Component {
           path="/messagefeed"
           component={MessegeList}
         />
-         <Route
+     
+          <Route 
+        exact 
+        path="/profileUpdate" 
+        component={ProfileUpdateForm}
+         />
+        <Route 
+        exact 
+        path="/profile" 
+        component={Profile} 
+        />
+            <Route
           exact
           path="*"
           component={NotFound}
