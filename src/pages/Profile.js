@@ -42,7 +42,7 @@ class Profile extends React.Component {
     <img src={logo} id="title" alt="logo"></img>
         <ul>
             <li ><Link to="/Profile"><i class="fa fa-home"></i>Profile</Link></li>
-            <li><a href="#"><i class="fa fa-user"></i>Users</a></li>
+            
            
             <li><Link to="/messagefeed"><MDBIcon class="fa fa-comment" far icon="comment" > </MDBIcon>MessageFeed</Link></li>
             
@@ -63,16 +63,12 @@ class Profile extends React.Component {
           <div>
           <div class="container d-flex justify-content-center mt-5">
     <div class="profile-card">
-        <div class="profile-image text-center mt-4"> <img src="https://i.imgur.com/RrKeDv8.jpg" alt="profile-image" class="img-fluid rounded-circle img-thumbnail" width="130"/> </div>
+        <div class="profile-image text-center mt-4"> <img src="https://i.imgur.com/RrKeDv8.jpg" alt="profile" class="img-fluid rounded-circle img-thumbnail" width="130"/> </div>
         <div class="profile text-center mt-2 text-white">
             <h3 class="mt-2"><h3>Profile Name: {this.state.user.displayName} </h3></h3> <span class="d-block">
             <p>Update Name:{this.state.user.about}</p></span> 
             <div class="mt-4">  <Link to="/ProfileUpdate"><MDBBtn>Update Profile</MDBBtn></Link> <Link to="/profilePictureUpdate"><MDBBtn>Upload Picture</MDBBtn></Link> </div>
-            <div class="icons">
-            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                <li><a href=""><i class="fa fa-instagram"></i></a></li>
-            </div>
+           
         </div>
     </div>
 </div>

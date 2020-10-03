@@ -17,9 +17,7 @@ class DataService{
   RegisterUser(userData) {
     return this.client.post(this.url + "/users", userData);
   }
-  getMessages(limit) {
-    return this.client.get(this.url + "/messages?limit=" + limit);
-  }
+ 
 
   getSpecificMessage(messageId) {
     return this.client.get(this.url + "/messages/" + messageId);

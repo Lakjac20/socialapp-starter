@@ -5,7 +5,7 @@ import { userIsAuthenticated } from "../../redux/HOCs";
 import "./ProfileUpdateForm.css";
 
 import DataService from "../../service/DataService";
-import { MDBBtn,MDBIcon } from "mdbreact";
+import { MDBIcon } from "mdbreact";
 import logo from "../../assets/images/logo3.jpg";
 
 
@@ -29,7 +29,7 @@ class ProfileUpdateForm extends React.Component {
   };
 
   render() {
-    const { loading, error } = this.props;
+    const { loading } = this.props;
     return (
       <div className="Profile">
       <div class="wrapper">
