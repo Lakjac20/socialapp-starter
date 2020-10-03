@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
+import MessegeList from "./pages/MessageList";
 import NotFound from "./pages/NotFound";
 
 class App extends React.Component {
@@ -20,6 +21,11 @@ class App extends React.Component {
           component={Profile}
         />
         <Route
+          exact
+          path="/messagefeed"
+          component={MessegeList}
+        />
+         <Route
           exact
           path="*"
           component={NotFound}
