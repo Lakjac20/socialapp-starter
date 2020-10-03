@@ -1,12 +1,16 @@
-import axios from "axios";
-class DataService {
-  constructor(
-    url = "https://socialapp-api.herokuapp.com",
-    client = axios.create()
-  ) {
-    this.url = url;
-    this.client = client;
-  }
+const BASE_URL = "https://socialapp-api.heroku.com";
+
+class DataService{
+
+    constructor(baseURL = BASE_URL, client){
+        this.baseURL = baseURL
+        this.client = client || axios.create({ baseURL })
+    }
+
+    getMessages(limit, offset){
+        return this.client.get(`/message?limit=${limit}&offset=${offset}`)
+    }
+
   RegisterUser(userData) {
     return this.client.post(this.url + "/users", userData);
   }
@@ -79,4 +83,5 @@ class DataService {
     );
   }
 }
-export default DataService;
+
+export default new DataService()
