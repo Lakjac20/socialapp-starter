@@ -1,10 +1,11 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import MessegeList from "./pages/MessageList";
 import NotFound from "./pages/NotFound";
+import ProfileUpdateForm from "./components/profileUpdateForm/ProfileUpdateForm";
+
 
 class App extends React.Component {
   render() {
@@ -25,7 +26,18 @@ class App extends React.Component {
           path="/messagefeed"
           component={MessegeList}
         />
-         <Route
+     
+          <Route 
+        exact 
+        path="/profileUpdate" 
+        component={ProfileUpdateForm}
+         />
+        <Route 
+        exact 
+        path="/profile" 
+        component={Profile} 
+        />
+            <Route
           exact
           path="*"
           component={NotFound}
