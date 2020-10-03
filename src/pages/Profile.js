@@ -1,7 +1,7 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { Link } from "react-router-dom";
-import BackendService from "../components/services/BackendService";
+import BackendService from "../service/DataService";
 import { userIsAuthenticated } from "../redux/HOCs";
 import "./Profile.css";
 import { MDBBtn,MDBIcon } from "mdbreact";
@@ -63,7 +63,7 @@ class Profile extends React.Component {
           <div>
           <div class="container d-flex justify-content-center mt-5">
     <div class="profile-card">
-        <div class="profile-image text-center mt-4"> <img src="https://i.imgur.com/RrKeDv8.jpg" class="img-fluid rounded-circle img-thumbnail" width="130"/> </div>
+        <div class="profile-image text-center mt-4"> <img src="https://i.imgur.com/RrKeDv8.jpg" alt="profile-image" class="img-fluid rounded-circle img-thumbnail" width="130"/> </div>
         <div class="profile text-center mt-2 text-white">
             <h3 class="mt-2"><h3>Profile Name: {this.state.user.displayName} </h3></h3> <span class="d-block">
             <p>Update Name:{this.state.user.about}</p></span> 

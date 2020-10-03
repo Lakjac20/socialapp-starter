@@ -25,7 +25,7 @@ class Menu extends React.Component {
   };
 
   render() {
-    let profileLink = "/profile/" + this.state.username;
+    
     return (
       <div className="Menu">
         <h1>5th Power</h1>
