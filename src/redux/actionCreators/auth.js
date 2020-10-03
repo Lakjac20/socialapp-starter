@@ -1,6 +1,6 @@
 import { domain, jsonHeaders, handleJsonResponse } from "./constants";
 import { LOGIN, LOGOUT } from "../actionTypes";
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
 const url = domain + "/auth";
 
 export const login = loginData => dispatch => {

@@ -1,6 +1,6 @@
 import React from "react";
 import Spinner from "react-spinkit";
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
 import "./RegistrationForm.css";
 import DataService from "../../DataService";
 
