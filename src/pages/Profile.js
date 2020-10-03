@@ -1,7 +1,7 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
 import { Link } from "react-router-dom";
-import BackendService from "../service/DataService";
+import DataService from "../service/DataService";
 import { userIsAuthenticated } from "../redux/HOCs";
 import "./Profile.css";
 import { MDBBtn,MDBIcon } from "mdbreact";
@@ -16,7 +16,7 @@ class Profile extends React.Component {
       userImg: "",
     };
 
-    this.client = new BackendService();
+    this.client = new DataService();
   }
   componentDidMount() {
     this.client.getUserPicture(this.state.username).then((result) =>
