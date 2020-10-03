@@ -9,12 +9,9 @@
     text-decoration: none;
     font-family: 'Josefin Sans', sans-serif
 }
-.profile{
-    background: #00bcd4;
-}
 
 body {
-    background: #00bcd4;
+    background-color: #f3f5f9
 }
 
 
@@ -108,15 +105,12 @@ img{
     width:250px;
 }
 .profilespace {
-    background: #00bcd4;
+    background:white;
 }
 
 
 
 
-body {
-    background: #E1BEE7
-}
 
 .profile-card {
     width: 350px;
@@ -167,7 +161,7 @@ body {
     background-color: #fff;
     line-height: 40px
 }
-body{padding-top:30px;}
+
 
 .glyphicon {  margin-bottom: 10px;margin-right: 10px;}
 
@@ -184,94 +178,9 @@ color: #999;
     border-radius: 0px;
     border: 1px #e6e9ee solid;
 }
-
-.panel-info {
-    background: #3f51b5 url(http://themesground.com/modern/demo1/HTML/img/intro-bg.png) repeat top left;
-    color: #fff;
-}
-
-.panel-success {
-    background: #1ab394 url(http://themesground.com/modern/demo1/HTML/img/intro-bg.png) repeat top left;
-    color: #fff;
-}
-
-.panel-widget {
-    overflow: hidden;
-    border: none;
-}
-
-.panel .panel-title {
-    color: #58666e;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0px;
-}
-.panel-title {
-    font-family: 'Montserrat', sans-serif;
-    color: #58666e;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 16px 20px;
-    margin: -20px;
-    background: #fff;
-    margin-bottom: 5px;
-    border-bottom: none;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    letter-spacing: 1px;
-}
-.panel-title {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 16px;
-    color: inherit;
-}
-.basic-list {
-    margin-bottom: 0;
-    padding: 0;
-}
-
-ul, ol {
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-/* Basic List */
-.basic-list {
-  margin-bottom: 0;
-  padding: 0;
-}
-.basic-list li {
-  display: block;
-  position: relative;
-  padding: 12px 0;
-}
-.basic-list li:last-child {
-  border-bottom: none;
-}
-.basic-list .right {
-  position: absolute;
-  right: 0;
-  display: inline-block;
-  padding: 3px 6px;
-  font-weight: 600;
-}
-
-/* Image List */
-.image-list li {
-  padding-left: 50px;
-}
-.image-list .img {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  left: 0;
-  border-radius: 0px;
-}
-.image-list .desc {
-  font-size: 12px;
-  opacity: 0.8;
-  display: block;
+li{
+    font-weight:bold;
+    font-size: 20px;
 }
 
 
@@ -280,3 +189,78 @@ ul, ol {
 
 
 
+
+
+
+
+
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+.custom-scrollbar-js,
+.custom-scrollbar-css {
+  height: 600px;
+}
+
+
+/* Custom Scrollbar using CSS */
+.custom-scrollbar-css {
+  overflow-y: scroll;
+}
+
+/* scrollbar width */
+.custom-scrollbar-css::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* scrollbar track */
+.custom-scrollbar-css::-webkit-scrollbar-track {
+  background: #eee;
+}
+
+/* scrollbar handle */
+.custom-scrollbar-css::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: #00d2ff;
+  background-image: linear-gradient(to top, #00d2ff 0%, #3a7bd5 100%);
+}
+
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSES
+* ==========================================
+*
+*/
+body {
+  min-height: 100vh;
+  background-color: #00d2ff;
+  background-image: linear-gradient(to right, #00d2ff 0%, #3a7bd5 100%);
+}
+
+.MessageBlock{
+    background-color: #87CEFA;
+
+}
+.comments .comment:hover .icon-rocknroll,.comments .comment:hover .like-count {
+    opacity: 1;
+  }
+  .comment-box-main{
+    background: #CA1D5F;
+  }
+  @media (min-width: 320px) and (max-width: 480px){
+    .comments .comment h4 {
+      font-size: 12px;
+    }
+    .comments .comment p{
+      font-size: 11px;
+    }
+    .comment-box-main .send-btn button{
+      margin-left: 5px;
+    }
+  }

@@ -3,10 +3,11 @@ import Menu from "../menu/Menu";
 import { Link } from "react-router-dom";
 import { userIsAuthenticated } from "../../redux/HOCs";
 import "./ProfileUpdateForm.css";
-import DataService from "../../dataService/DataService";
 
+import DataService from "../../service/DataService";
+import { MDBBtn,MDBIcon } from "mdbreact";
+import logo from "../../assets/images/logo3.jpg";
 
-import { MDBBtn, MDBIcon } from "mdbreact";
 
 class ProfileUpdateForm extends React.Component {
   constructor(props) {
@@ -33,65 +34,94 @@ class ProfileUpdateForm extends React.Component {
       <div className="Profile">
       <div class="wrapper">
   <div class="sidebar">
-     <img src="https://www.metal-archives.com/images/2/7/9/4/27946_logo.jpg"></img>
+  <img src={logo} id="title" alt="logo"></img>
+  
       <ul>
-          <li><Link to="/Profile"><i class="fa fa-home"></i>Profile</Link></li>
-          <li><a href="#"><i class="fa fa-user"></i>Users</a></li>
+          <li ><Link to="/Profile"><i class="fa fa-home"></i>Profile</Link></li>
+          <li><Link to="/messagefeed"><i class="fa fa-user"></i>Users</Link></li>
          
-          <li><Link to="/messagefeed"><MDBIcon class="fa fa-comment" far icon="comment" > </MDBIcon>Comments</Link></li>
+          <li><Link to="/messagefeed"><MDBIcon class="fa fa-comment" far icon="comment" > </MDBIcon>MessageFeed</Link></li>
           
           
          
          
       </ul>
-     
+    
   </div>
   <div class="main_content">
-      <div class="header">The Power Of Fith welcomes you! 
+      <div class="header">
       <Menu isAuthenticated={this.props.isAuthenticated} />
       
       </div>
       
+      <div className="profilespace">
+      
      
-      <div className="profileupdatepage">
 
-<div>
-  <h1>Update Profile:</h1>
-  <form id="Registration-form" onSubmit={this.handleUpdate}>
-    <label htmlFor="about">About you</label>
-    <input
-      className="aboutyou"
-      type="text"
-      name="about"
-      autoFocus
-      required
-      onChange={this.handleChange}
-    />
-    <label htmlFor="password">Password</label>
-    <input
-      type="password"
-      name="password"
-      required
-      onChange={this.handleChange}
-    />
-    <label htmlFor="displayName">Display Name</label>
-    <input
-      type="text"
-      name="displayName"
-      required
-      onChange={this.handleChange}
-    />
-    <button type="submit" disabled={loading}>
-      Register
-    </button>
-  </form>
-</div>
-</div>
+<div class="container register">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                        <h3>Update Profile</h3>
+                        
+                        
+                    </div>
+                    <div class="col-md-9 register-right">
+                        
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                               
+                                <div class="row register-form">
+                               
+                                    <div class="col-md-6">
+                                    <form id="Registration-form" onSubmit={this.handleUpdate}>
+                                        <div class="form-group">
+                                        <label htmlFor="displayName">Display Name</label>
+                                            <input type="text" class="form-control" 
+                                            placeholder="Display Name"   name="displayName"
+                                            autoFocus
+                                            required
+                                            onChange={this.handleChange}/>
+                                        </div>
+                                       
+                                        <div class="form-group">
+                                        <label htmlFor="password">Password</label>
+                                            <input type="password" class="form-control" placeholder="Password"
+                                             name="password"
+                                             required
+                                             onChange={this.handleChange} />
+                                        </div>
+                                        <div class="form-group">
+                                        <label htmlFor="about">About you</label><br></br>
+                                            <input type="text" class="aboutyou"  placeholder="About You"
+                                            name="about"
+                                            autoFocus
+                                            required
+                                            onChange={this.handleChange}/>
+                                        </div> 
+                                       
+                                        <input type="submit" class="btnRegister"  value="Register" disabled={loading}/>
+                                        </form>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+        
      
+      </div>
+      
+      
   </div>
 </div>
-    </div>
-      
+   
      
     );
   }
