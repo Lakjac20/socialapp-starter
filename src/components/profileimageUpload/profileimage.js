@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import ImageUploading from "react-images-uploading";
-
+import DataService from "../../service/DataService";
 import "./styles.css";
 
 function App() {
