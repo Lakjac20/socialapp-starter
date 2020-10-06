@@ -1,78 +1,90 @@
-import axios from "axios";
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
+
+
+
+
 class DataService {
-  constructor (
-    url = "https://socialapp-api.herokuapp.com",
-    client = axios.create()
-  ) {
+  constructor (url = 'https://socialapp-api.herokuapp.com', client = axios.create()) {
     this.url = url;
     this.client = client;
-  }
-  RegisterUser(userData) {
-    return this.client.post(this.url + "/users", userData);
-  }
-  getMessages(limit) {
-    return this.client.get(this.url + "/messages?limit=" + limit);
+    this.token = JSON.parse(localStorage.getItem('login'))
   }
 
-  getSpecificMessage(messageId) {
-    return this.client.get(this.url + "/messages/" + messageId);
-  }
+  //users
 
-  createMessage(text) {
-    let loginData = JSON.parse(localStorage.getItem("login"));
-    return this.client.post(this.url + "/messages", text, {
-      headers: { Authorization: `Bearer ${loginData.result.token}` },
-    });
+  registerUser(userData) {
+    return this.client.post(this.url + "/users/", userData)
+
   }
-  updateUser(text) {
-    let loginData = JSON.parse(localStorage.getItem("login"));
-    return this.client.patch(
-      this.url + "/users/" + loginData.result.username,
-      text,
-      {
-        headers: { Authorization: `Bearer ${loginData.result.token}` },
+  updateUser(userData, userName) {
+    return this.client.patch(this.url + `${"/users/"}${userName}`, userData, {
+      headers: {
+
+        Authorization: "Bearer " + this.token.result.token
       }
-    );
+    })
+
   }
-  likeMessage(messageId) {
-    let loginData = JSON.parse(localStorage.getItem("login"));
-    return this.client.post(this.url + "/likes/", messageId, {
-      headers: { Authorization: `Bearer ${loginData.result.token}` },
-    });
+  deleteUser(userName) {
+    return this.client.delete(this.url + '/users/' + userName, {
+      headers: {
+
+        Authorization: "Bearer " + this.token.result.token
+      }
+    })
+
   }
 
-  unlikeMessage(likeId) {
-    let loginData = JSON.parse(localStorage.getItem("login"));
-    return this.client.delete(this.url + "/likes/" + likeId, {
-      headers: { Authorization: `Bearer ${loginData.result.token}` },
-    });
+  getUser(userName) {
+    return this.client.delete(this.url + '/users/' + userName)
+
   }
+
+  //messages
+
+  createMessage(message) {
+    return this.client.post(this.url + '/messages', message, {
+      headers: {
+
+        Authorization: "Bearer " + this.token.result.token
+      }
+    })
+
+  }
+  getMessages() {
+    return this.client.get(this.url + '/messages?limit=20').then(response => { return response.data.messages })
+
+
+  }
+
   deleteMessage(messageId) {
-    let loginData = JSON.parse(localStorage.getItem("login"));
-    return this.client.delete(this.url + "/messages/" + messageId, {
-      headers: { Authorization: `Bearer ${loginData.result.token}` },
-    });
+    return this.client.delete(this.url + '/messages/' + messageId, {
+      headers: {
+        Authorization: "Bearer " + this.token.result.token
+      }
+    })
   }
 
-  getUser(username) {
-    return this.client.get(this.url + "/users/" + username);
-  }
-  getUserPicture(username) {
-    return this.client.get(`${this.url}/users/${username}/picture`);
-  }
-  changeProfilePic(picture) {
-    let loginData = JSON.parse(localStorage.getItem("login"));
-    console.log(picture);
-    return this.client.put(
-      `${this.url}/users/${loginData.result.username}/picture`,
-      picture,
-      {
-        headers: {
-          Authorization: `Bearer ${loginData.result.token}`,
-        },
+
+
+  //likes
+  likeMessage(messageId) {
+    return this.client.post(this.url + '/likes', { messageId }, {
+      headers: {
+        Authorization: "Bearer " + this.token.result.token
       }
-    );
+    })
+
   }
+
+  deleteLike(likeId) {
+    return this.client.post(this.url + '/likes/', { likeId }, {
+      headers: {
+        Authorization: "Bearer " + this.token.result.token
+      }
+    })
+
+  }
+
 }
 export default DataService;

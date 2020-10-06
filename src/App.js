@@ -1,23 +1,36 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 import Home from "./pages/Home";
-import Profile from "./pages/Profile";
+
 import NotFound from "./pages/NotFound";
-import MessageFeed from "./pages/MessageFeed";
-import ProfileUpdateForm from "./components/profileUpdateForm/ProfileUpdateForm";
+import Messages from "./pages/Message";
+import Profile from "./pages/Profile";
+import ProfilePageMain from "./pages/ProfilePageMain";
+import { PlaceholderParagraph } from "semantic-ui-react";
 
 
 class App extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      userName: ''
+    }
+
+
+
+
+  }
+
   render() {
+
     return (
+
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/profile/:username" component={Profile} />
-        <Route exact path="/messagefeed" component={MessageFeed} />
-        <Route exact path="/profileUpdate" component={ProfileUpdateForm} />
-        <Route exact path="/profileimageUpload" component={Profileimage} />
+        <Route exact path="/Profile/:username" component={Profile} />
+        <Route exact path="/Message" component={Messages} />
         <Route exact path="*" component={NotFound} />
       </Switch>
     );

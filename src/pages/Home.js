@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import LoginForm from "../components/loginForm/LoginForm";
 import Menu from "../components/menu/Menu";
+import Menu from "../components/menu/Menu";
 import RegistrationForm from "../components/registrationForm/RegistrationForm";
 
 import { userIsNotAuthenticated } from "../redux/HOCs";

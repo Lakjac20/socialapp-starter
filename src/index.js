@@ -7,6 +7,8 @@ import { ConnectedRouter } from "connected-react-router";
 import App from "./App";
 import { store, history } from "./redux";
 
+import 'semantic-ui-css/semantic.min.css'
+
 ReactDOM.render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
