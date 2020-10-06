@@ -1,32 +1,14 @@
 import axios from "axios";
-
-const BASE_URL = "https://socialapp-api.heroku.com";
-
-class DataService{
-
-    constructor(baseURL = BASE_URL, client){
-        this.baseURL = baseURL
-        this.client = client || axios.create({ baseURL })
-    }
-
-    getMessages(limit, offset){
-        return this.client.get(`/message?limit=${limit}&offset=${offset}`)
-    }
-
+class DataService {
+  constructor(
+    url = "https://socialapp-api.herokuapp.com",
+    client = axios.create()
+  ) {
+    this.url = url;
+    this.client = client;
+  }
   RegisterUser(userData) {
     return this.client.post(this.url + "/users", userData);
-  }
- 
-
-  getSpecificMessage(messageId) {
-    return this.client.get(this.url + "/messages/" + messageId);
-  }
-
-  createMessage(text) {
-    let loginData = JSON.parse(localStorage.getItem("login"));
-    return this.client.post(this.url + "/messages", text, {
-      headers: { Authorization: `Bearer ${loginData.result.token}` },
-    });
   }
   updateUser(text) {
     let loginData = JSON.parse(localStorage.getItem("login"));
@@ -81,6 +63,12 @@ class DataService{
         },
       }
     );
+  }
+  deleteUser(username) {
+    let loginData = JSON.parse(localStorage.getItem("login"));
+    return this.client.delete(this.url + "/users/" + username, {
+      headers: { Authorization: `Bearer ${loginData.result.token}` },
+    });
   }
 }
 export default DataService;
