@@ -29,7 +29,7 @@ class ProfileUpdateForm extends React.Component {
     console.log('click')
   }
   componentDidMount() {
-    this.client.getUser(this.props.username).then((res) => {
+    this.client.getUser(this.props.user).then((res) => {
       this.setState({ user: res.data.user });
       console.log(res);
     });
@@ -42,7 +42,7 @@ class ProfileUpdateForm extends React.Component {
   <div class="sidebar">
   <img src={logo} id="title" alt="logo"></img>
   <ul>
-            <li ><Link to="/Profile"><i class="fa fa-home"></i>Profile</Link></li>
+            <li ><Link to="/"><i class="fa fa-home"></i>Profile</Link></li>
             <li><Link to="/message"><MDBIcon class="fa fa-comment" far icon="comment" > </MDBIcon>MessageFeed</Link></li>
              </ul>
   </div>
@@ -88,7 +88,7 @@ class ProfileUpdateForm extends React.Component {
                                             required
                                             onChange={this.handleChange}/>
                                         </div> 
-                                        <button onClick={this.handleChange} type="submit" class="btnRegister"  value="Register" disabled={loading}>UPDATE</button>
+                                        <button onClick={this.handleUpdate} type="submit" class="btnRegister"  value="Register" disabled={loading}>UPDATE</button>
                                         </form>
                                     </div>
                                 </div>
