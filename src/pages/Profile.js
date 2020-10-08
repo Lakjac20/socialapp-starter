@@ -67,7 +67,7 @@ class Profile extends React.Component {
         <div class="profile text-center mt-2 text-white">
             <h3 class="mt-2"><h3>Profile Name: {this.state.user.displayName} </h3></h3> <span class="d-block">
             <p>Update Name:{this.state.user.about}</p></span> 
-            <div class="mt-4">  <Link to="/ProfileUpdate"><MDBBtn>Update Profile</MDBBtn></Link> <Link to="/profilePictureUpdate"><MDBBtn>Upload Picture</MDBBtn></Link> </div>
+            <div class="mt-4">  <Link to="/ProfileUpdate"><MDBBtn>Update Profile</MDBBtn></Link> </div>
            
         </div>
     </div>

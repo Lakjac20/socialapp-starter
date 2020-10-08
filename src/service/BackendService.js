@@ -7,8 +7,8 @@ class BackendService {
         this.baseURL = baseURL
         this.client = client || axios.create({baseURL})
     }
-    getMessages(limit = 25, offset){
-       this.client.get( `/message?limit=${limit}&offset=${offset}`)
+    getMessages(limit){
+       return this.client.get( `/message?limit=${limit}`)
     }
     getSpecificMessage(messageId) {
         return this.client.get(this.url + "/messages/" + messageId);
