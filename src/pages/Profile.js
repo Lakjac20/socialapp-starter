@@ -41,7 +41,7 @@ class Profile extends React.Component {
     <div class="sidebar">
     <img src={logo} id="title" alt="logo"></img>
         <ul>
-            <li ><Link to="/Profile"><i class="fa fa-home"></i>Profile</Link></li>
+            <li ><Link to="/"><i class="fa fa-home" ></i>Profile</Link></li>
             
            
             <li><Link to="/messagefeed"><MDBIcon class="fa fa-comment" far icon="comment" > </MDBIcon>MessageFeed</Link></li>
