@@ -11,16 +11,16 @@ class ProfileUpdateForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      
-      user: {password: "",
+      password: "",
       about: "",
-      displayName: "",},
+      displayName: "",
+      user: {},
     };
     this.client = new DataService();
   }
   handleUpdate = (e) => {
     e.preventDefault();
-    this.client.updateUser(this.state);
+    this.client.updateUser(this.state.user);
   };
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
@@ -35,7 +35,7 @@ class ProfileUpdateForm extends React.Component {
     });
   }
   render() {
-    const { loading, error } = this.props;
+    const { loading} = this.props;
     return (
       <div className="Profile">
       <div class="wrapper">
@@ -88,7 +88,7 @@ class ProfileUpdateForm extends React.Component {
                                             required
                                             onChange={this.handleChange}/>
                                         </div> 
-                                        <input onClick={this.handleChange} type="submit" class="btnRegister"  value="Register" disabled={loading}/>
+                                        <button onClick={this.handleChange} type="submit" class="btnRegister"  value="Register" disabled={loading}>UPDATE</button>
                                         </form>
                                     </div>
                                 </div>

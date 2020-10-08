@@ -10,60 +10,21 @@ class DataService {
   RegisterUser(userData) {
     return this.client.post(this.url + "/users", userData);
   }
-  updateUser() {
-    let loginData = JSON.parse(localStorage.getItem("login"));
+  updateUser(text) {
+    const loginData = JSON.parse(localStorage.getItem("login"));
     return this.client.patch(
-      this.url + "/users/" + loginData.result.username,
+      this.url + "/users" + loginData.result.username, text,
       {
         headers: { Authorization: `Bearer ${loginData.result.token}` },
       }
     );
   }
-// likeMessage(messageId) {
-//    let loginData = JSON.parse(localStorage.getItem("login"));
- //   return this.client.post(this.url + "/likes/", messageId, {
- //     headers: { Authorization: `Bearer ${loginData.result.token}` },
- //   });
- // }
-
-//  unlikeMessage(likeId) {
-//    let loginData = JSON.parse(localStorage.getItem("login"));
- //   return this.client.delete(this.url + "/likes/" + likeId, {
- //     headers: { Authorization: `Bearer ${loginData.result.token}` },
- //   });
- // }
- // deleteMessage(messageId) {
- //   let loginData = JSON.parse(localStorage.getItem("login"));
- //   return this.client.delete(this.url + "/messages/" + messageId, {
- //     headers: { Authorization: `Bearer ${loginData.result.token}` },
- //   });
- // }
-
   getUser(username) {
     return this.client.get(this.url + "/users/" + username);
-  }
+  } 
+
   getUserPicture(username) {
     return this.client.get(`${this.url}/users/${username}/picture`);
-  }
-
- // changeProfilePic(picture) {
-   // let loginData = JSON.parse(localStorage.getItem("login"));
-    //console.log(picture);
-    //return this.client.put(
-      //`${this.url}/users/${loginData.result.username}/picture`,
-      //picture,
-      //{
-        //headers: {
-          //Authorization: `Bearer ${loginData.result.token}`,
-        //},
-      //}
-    //);
-  //}
-  deleteUser(username) {
-    let loginData = JSON.parse(localStorage.getItem("login"));
-    return this.client.delete(this.url + "/users/" + username, {
-      headers: { Authorization: `Bearer ${loginData.result.token}` },
-    });
   }
   setPicture(username) {
     const loginData = JSON.parse(localStorage.getItem("login")).result;

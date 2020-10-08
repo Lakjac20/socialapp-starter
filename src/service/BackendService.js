@@ -10,16 +10,7 @@ class BackendService {
     getMessages(limit){
        return this.client.get( `/message?limit=${limit}`)
     }
-    getSpecificMessage(messageId) {
-        return this.client.get(this.url + "/messages/" + messageId);
-      }
-    
-      createMessage(text) {
-        let loginData = JSON.parse(localStorage.getItem("login"));
-        return this.client.post(this.url + "/messages", text, {
-          headers: { Authorization: `Bearer ${loginData.result.token}` },
-        });
-      }
+  
 }
 
-export default new BackendService()
+export default new BackendService();
